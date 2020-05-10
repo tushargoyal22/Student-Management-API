@@ -12,10 +12,14 @@ from api import models,serializers
 # Create your views here.
 
 
-class StudentListView(ListAPIView):
+class StudentListView(ListCreateAPIView):
     queryset = models.Student.objects.all()
     serializer_class = serializers.StudentSerializer
 
-class StudentDetailsView(RetrieveAPIView):
+class StudentDetailsView(RetrieveUpdateAPIView):
+    queryset = models.Student.objects.all()
+    serializer_class = serializers.StudentSerializer
+
+class StudentDeleteView(DestroyAPIView):
     queryset = models.Student.objects.all()
     serializer_class = serializers.StudentSerializer
