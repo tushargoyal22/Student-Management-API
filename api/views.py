@@ -15,3 +15,7 @@ from api import models,serializers
 class StudentListView(ListAPIView):
     queryset = models.Student.objects.all()
     serializer_class = serializers.StudentSerializer
+
+class StudentDetailsView(RetrieveAPIView):
+    queryset = models.Student.objects.all()
+    serializer_class = serializers.StudentSerializer
